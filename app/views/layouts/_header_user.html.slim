@@ -1,0 +1,21 @@
+ul.title-area
+  li.name
+    h1
+      a href="#"  CheckItUp
+  /! Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+  li.toggle-topbar.menu-icon
+    a href="#"
+      span Menu
+section.top-bar-section
+  /! Right Nav Section
+  ul.right
+    li.divider
+    li
+      = link_to 'Something else', '#'
+    li.divider
+    li
+      = link_to 'Log Out', session_path, method: :delete
+  /! Left Nav Section
+  ul.left
+    li.active
+      = link_to 'Sites', '#'

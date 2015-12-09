@@ -1,0 +1,9 @@
+p
+  h1.text-center #{@model.to_s} profile
+.col-lg-6.col-sm-8.col-xs-12.col-lg-offset-3.col-sm-offset-2
+  #franchisor_password_form
+    = simple_form_for current_user, defaults: { input_html: { class: 'form-control' }, wrapper_html: { class: 'form-group' } }, method: 'put' do |f|
+      = f.input :password
+      = f.input :password_confirmation
+      .text-right
+        = f.submit 'Set password', class: 'btn btn-primary'

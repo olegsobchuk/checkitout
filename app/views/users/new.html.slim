@@ -1,0 +1,14 @@
+center
+  h1 Sign Up to Check It Out
+
+  .raw
+  .small-6.small-offset-3.large-4.large-offset-4.column
+    = simple_form_for @user, method: :post, defaults: { wrapper_html: { class: 'large-12 columns' } } do |f|
+      = f.input_field :email, placeholder: 'email'
+      = f.error :email
+      = f.input_field :password, label: nil, placeholder: 'password'
+      = f.error :password
+      = f.input_field :password_confirmation, label: nil, placeholder: 'confirm password'
+      = f.error :password
+      .text-right
+        = f.submit 'Sign Up', class: 'button small radius'

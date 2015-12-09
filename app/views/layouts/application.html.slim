@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title
+      | Check It Out
+    meta charset='utf-8'
+    meta name='viewport' content='width=device-width, initial-scale=1.0'
+
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'vendor/modernizr'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  body
+    #header
+      nav.top-bar data-topbar='' role="navigation"
+        - if current_user
+          = render 'layouts/header_user'
+        - else
+          = render 'layouts/header_unregistred'
+    = yield

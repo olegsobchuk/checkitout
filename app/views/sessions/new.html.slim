@@ -1,0 +1,12 @@
+center
+  h1 Welcome to Check It Out
+
+  .raw
+  .small-6.small-offset-3.large-4.large-offset-4.column
+    = simple_form_for @session, defaults: { wrapper_html: { class: 'large-12 columns' } } do |f|
+      = f.input_field :email, placeholder: 'email'
+      = f.error :email
+      = f.input_field :password, label: nil, placeholder: 'password'
+      = f.error :password
+      .text-right
+        = f.submit 'Sign In', class: 'button small radius'
