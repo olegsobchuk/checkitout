@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_secure_password validations: false
 
+  enum status: [:user, :admin]
+
   attr_accessor :skip_password_validation
 
   validates :email,

@@ -95,7 +95,6 @@ GEM
     foundation-rails (5.5.3.2)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
-    geocoder (1.2.12)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -178,10 +177,6 @@ GEM
     rainbow (2.0.0)
     rake (10.4.2)
     rdoc (4.2.0)
-    rgeo (0.4.0)
-    rgeo-activerecord (4.0.0)
-      activerecord (~> 4.2)
-      rgeo (~> 0.3)
     rspec-core (3.4.1)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -289,7 +284,6 @@ DEPENDENCIES
   faker
   font-awesome-rails
   foundation-rails
-  geocoder
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
@@ -301,8 +295,6 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.5)
   rails_12factor
-  rgeo
-  rgeo-activerecord
   rspec-rails
   rspec-retry
   rubocop

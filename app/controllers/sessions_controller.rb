@@ -9,16 +9,12 @@ class SessionsController < ApplicationController
       session[:user_id] = @session.user_id
       redirect_to current_user
     else
-      render new_sessions_path
+      redirect_to new_session_path
     end
   end
 
   def destroy
     reset_session
     redirect_to :root
-  end
-
-  def edit
-    redirect_to root_path(current_user) and return if require_person.password_digest
   end
 end
