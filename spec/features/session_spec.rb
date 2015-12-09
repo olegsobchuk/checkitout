@@ -8,7 +8,7 @@ feature 'Session' do
     session_page.open
     expect(page).to have_content('Welcome to Check It Out')
     session_page.login(user.email, 'pass')
-    # expect(page).to have_content('is invalid')
+    expect(page).to have_content('is invalid')
     session_page.login(user.email, user.password)
     expect(page).to have_content('Log Out')
     find(:link, 'Log Out').click
