@@ -15,16 +15,13 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-
-  end
-
   def update
-
+    @user.update(user_params)
+    redirect_to current_user
   end
 
   def destroy
-
+    reset_session if @user.destroy
   end
 
   private

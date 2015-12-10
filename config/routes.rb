@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
   resources :users, except: :index do
-    resources :projects
+    resources :projects do
+      resources :scenarios, except: :index
+    end
   end
 end

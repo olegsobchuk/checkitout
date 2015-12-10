@@ -11,7 +11,7 @@ feature 'Session' do
     expect(page).to have_content('is invalid')
     session_page.login(user.email, user.password)
     expect(page).to have_content('Log Out')
-    find(:link, 'Log Out').click
+    find_link('Log Out').click
     expect(page).to have_content('Log In')
   end
 end

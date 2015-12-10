@@ -13,7 +13,7 @@ feature 'Project' do
   scenario 'Create, update, delete', js: true do
     user_page.open(user)
     expect(page).to have_content('Projects')
-    find(:link, 'Projects').click()
+    find_link('Projects').click()
     expect(page).to have_content('Current Projects')
     find(:xpath, "//a[@href='/users/#{user.id}/projects/new']").click()
     expect(page).to have_content('Project')
