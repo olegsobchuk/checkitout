@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
     length: { minimum: 3, maximum: 254 },
     format: { with: /.+@.+\..+/i }
   validates :password, confirmation: true, presence: true, length: { minimum: 6 }, unless: :skip_password_validation
+
+  has_many :projects, dependent: :destroy
 end
