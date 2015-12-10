@@ -1,7 +1,7 @@
 ul.title-area
   li.name
     h1
-      a href="#"  CheckItUp
+      = link_to 'CheckItUp', root_path
   /! Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
   li.toggle-topbar.menu-icon
     a href="#"
@@ -9,6 +9,9 @@ ul.title-area
 section.top-bar-section
   /! Right Nav Section
   ul.right
+    li.divider
+    li
+      = link_to 'Sign Up', new_user_path
     li.divider
     li
       = link_to 'Log In', new_session_path

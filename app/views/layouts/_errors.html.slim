@@ -1,0 +1,5 @@
+- flash.each do |type, message|
+  div data-alert='' class="alert-box radius #{type}"
+    .text-center
+      = message
+    = link_to '&times;'.html_safe, 'javascript:void(false)', class: :close

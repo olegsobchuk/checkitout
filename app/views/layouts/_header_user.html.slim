@@ -11,11 +11,17 @@ section.top-bar-section
   ul.right
     li.divider
     li
-      = link_to 'Something else', '#'
+      = link_to '#' do
+        i.fa.fa-user.fa-2x
+          | &nbsp;
+        | Profile
     li.divider
     li
-      = link_to 'Log Out', session_path, method: :delete
+      = link_to session_path, method: :delete do
+        i.fa.fa-sign-out.fa-2x
+          | &nbsp;
+        | Log Out
   /! Left Nav Section
   ul.left
     li.active
-      = link_to 'Sites', '#'
+      = link_to 'Projects', user_projects_path(current_user)

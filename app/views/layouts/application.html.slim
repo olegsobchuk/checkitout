@@ -18,4 +18,6 @@ html
           = render 'layouts/header_user'
         - else
           = render 'layouts/header_unregistred'
+      = render 'layouts/errors', flash: flash
+
     = yield
