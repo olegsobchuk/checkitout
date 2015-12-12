@@ -36,6 +36,10 @@ class ProjectsController < ApplicationController
     redirect_to user_projects_path(current_user)
   end
 
+  def scenario
+    @scenarios = @project.scenarios.where(title: params[:title])
+  end
+
   private
 
   def find_project
@@ -43,6 +47,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title)
+    params.require(:project).permit(:title, scenarios_params: [:id, :title, :step, :order, :_destroy])
   end
 end

@@ -3,4 +3,5 @@ class Project < ActiveRecord::Base
                     uniqueness: { case_sensitive: false, message: 'This Project already exist' }
 
   belongs_to :user
+  has_many :scenarios
 end
