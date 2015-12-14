@@ -1,3 +1,19 @@
 .row
   .text-center
-    h2 = @project.title
+    h2
+      => @project.title
+      | scenarios
+.row
+  - if @titles.empty?
+    | You haven't any scenario yet.
+  - else
+    table
+      thead
+        th Title
+        th colspan='2'
+      tbody
+        - @titles.each do |title|
+          tr id="scenario_title_#{title}"
+            td = title
+            td = link_to 'Edit', project_scenarios_path(@project, title: title)
+            td = link_to 'Remove', project_scenarios_path(@project, title: title), method: :delete, data: { confirm: 'Are you sure?' }

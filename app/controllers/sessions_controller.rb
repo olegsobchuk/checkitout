@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
   def new
-    @session = Session.new(email: session[:email])
+    if current_user
+      redirect_to current_user
+    else
+      @session = Session.new(email: session[:email])
+    end
   end
 
   def create

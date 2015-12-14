@@ -1,6 +1,6 @@
 .small-8.large-4.small-offset-2.large-offset-3.columns
   h1 Project
-  = simple_form_for [current_user, @project] do |f|
+  = simple_form_for @project do |f|
     = f.input :title
     = f.button :button, class: 'button small' do
       i.fa.fa-floppy-o

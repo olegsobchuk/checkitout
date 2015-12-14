@@ -1,0 +1,21 @@
+left
+  ' Project:
+  = link_to @project.title, project_path(@project)
+
+center#title
+  h3= @scenarios.first.title
+
+= simple_form_for @project, url: project_scenarios_path(@project), method: :put do |f|
+  - @scenarios.each do |scenario|
+    .row id="step_#{scenario.id}"
+      .small-8.large-6.large-offset-1.columns
+        => scenario.step
+        = hidden_field_tag 'project[scenarios_attributes][][id]', scenario.id
+        = hidden_field_tag 'project[scenarios_attributes][][title]', scenario.title
+        = hidden_field_tag 'project[scenarios_attributes][][step]', scenario.step
+        = hidden_field_tag 'project[scenarios_attributes][][order]', scenario.order
+
+      .small-4.large-2.columns
+        = render 'buttons', id: scenario.id
+
+  = f.submit
