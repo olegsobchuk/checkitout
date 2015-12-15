@@ -5,6 +5,7 @@ ruby '2.2.3'
 gem 'rails', '4.2.5'
 
 gem 'bcrypt', '~> 3.1.7'
+gem 'capybara'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'font-awesome-rails'
 gem 'foundation-rails'
@@ -25,7 +26,6 @@ end
 
 group :development, :test do
   gem 'byebug'
-  gem 'capybara'
   gem 'capybara-email'
   gem 'capybara-screenshot'
   gem 'database_cleaner'

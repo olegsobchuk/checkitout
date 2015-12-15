@@ -3,3 +3,10 @@
  */
 @import "foundation_and_overrides";
 @import "font-awesome";
+
+a.dark_link:link {
+  color: #1F2151;
+  &:hover {
+    color: #3F45A8;
+  }
+}

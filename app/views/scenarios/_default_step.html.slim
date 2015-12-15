@@ -1,0 +1,11 @@
+#step_new.hide
+  .step_result.large-9.columns
+    = hidden_field_tag 'project[scenarios_attributes][][title]', title
+    = text_field_tag 'project[scenarios_attributes][][step]'
+    = link_to 'Add', 'javascript:void(false)', id: 'add_step', class: "button success small"
+    = link_to 'Cancel', 'javascript:void(false)', id: 'cancel_step', class: "button disabled small"
+    = hidden_field_tag 'project[scenarios_attributes][][order]'
+
+  #control_buttons.text-right.large-3.columns.hide
+    = render 'buttons', first: nil
+  hr

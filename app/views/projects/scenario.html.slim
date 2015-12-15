@@ -1,0 +1,7 @@
+#title
+  - if @scenarios.any?
+    = @csenarios.first.title
+  - else
+    = field_tag :title
+    #title_change_link
+      = link_to 'Edit', 'javascript:void(false)'

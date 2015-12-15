@@ -1,0 +1,17 @@
+left
+  ' Project:
+  = link_to @project.title, project_path(@project)
+
+center#title
+  h3= params[:title]
+
+= render 'default_step', title: params[:title]
+= simple_form_for @project, url: project_scenarios_path(@project), method: :put do |f|
+  .row
+    .large-12.columns
+      = render 'step', first: true, scenario: @scenarios.to_a.shift
+      - @scenarios.each do |scenario|
+        = render 'step', scenario: scenario
+  .row
+    .text-right
+      = f.button :button, 'SAVE', class: 'button default'
