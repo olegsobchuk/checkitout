@@ -1,10 +1,10 @@
-- if first
+- unless first
   => link_to 'javascript:void(false)', class: 'edit dark_link', title: 'Edit step' do
     i.fa.fa-medkit.fa-2x
   => link_to 'javascript:void(false)', class: 'add-before dark_link', title: 'Add step before' do
     i.fa.fa-arrow-up.fa-2x
 => link_to 'javascript:void(false)', class: 'add-after dark_link', title: 'Add step after' do
   i.fa.fa-arrow-down.fa-2x
-- if first
+- unless first
   = link_to 'javascript:void(false)', class: 'remove dark_link', title: 'Remove step' do
     i.fa.fa-scissors.fa-2x
