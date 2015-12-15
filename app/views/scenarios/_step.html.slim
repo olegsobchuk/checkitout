@@ -6,5 +6,5 @@
   = hidden_field_tag 'project[scenarios_attributes][][order]', scenario.order
 
 .large-3.columns.text-right data-id="step_#{scenario.id}"
-  = render 'buttons'
+  = render 'buttons', first: first || nil
 hr

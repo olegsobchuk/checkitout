@@ -4,7 +4,6 @@ class ScenariosController < ApplicationController
   before_action :find_scenarios, only: [:edit, :destroy]
 
   def edit
-    rendirect_to project_path(@project) if @scenarios.empty?
   end
 
   def update
@@ -21,6 +20,7 @@ class ScenariosController < ApplicationController
 
   def find_scenarios
     @scenarios = @project.scenarios.where(title: params[:title]).order(:order)
+    @scenarios << @project.scenarios.build(title: params[:title], step: "# init scenario - #{params[:title]}") if @scenarios.empty?
   end
 
   def find_project

@@ -3,14 +3,15 @@ left
   = link_to @project.title, project_path(@project)
 
 center#title
-  h3= @scenarios.first.title
+  h3= params[:title]
 
-= render 'default_step', title: @scenarios.first.title
+= render 'default_step', title: params[:title]
 = simple_form_for @project, url: project_scenarios_path(@project), method: :put do |f|
+  = render 'step', first: 'first', scenario: @scenarios.to_a.shift
   - @scenarios.each do |scenario|
     .row
       .large-12.columns
         = render 'step', scenario: scenario
   .row
-    .small-8.large-6.large-offset-1.columns
-      = f.submit
+    .text-right
+      = f.button :button, 'SAVE', class: 'button default'

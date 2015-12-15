@@ -16,7 +16,6 @@ insertStepBeforeOrAfter = (_this, insertBeforeOrAfter) ->
   id = $(_this).parent().data('id')
   new_id = new Date().getTime()
   title = $('#title').text().trim()
-  order = $("##{id} #project_scenarios_attributes__order").val()
   $('#step_new').clone().attr('id', 'new_step_' + new_id).addClass('unfinished').show()[insertBeforeOrAfter]('#' + id)
   $('#new_step_' + new_id + ' #cancel_step, #add_step').data('id', 'new_step_' + new_id)
 
@@ -41,3 +40,9 @@ $(document).on 'click', '#add_step', ->
     $('#' + id + ' #control_buttons').show().data('id', id)
   else
     alert("Can't been added empty step!")
+
+$ ->
+  $('#start').click ->
+    $(this).parent().data('id', )
+    insertStepBeforeOrAfter(this, 'insertAfter')
+    $(this).remove()

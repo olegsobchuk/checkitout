@@ -12,6 +12,10 @@
         th Title
         th colspan='2'
       tbody
+        tr id="scenario_title_new"
+          td = text_field_tag :new_title, '', id: 'new_scenario_title', placeholder: 'Add new title'
+          td = link_to 'Edit', 'javascript:void(false)', id: 'edit'
+          td = link_to 'Remove', 'javascript:void(false)', id: 'remove'
         - @titles.each do |title|
           tr id="scenario_title_#{title}"
             td = title
