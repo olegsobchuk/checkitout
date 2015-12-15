@@ -13,7 +13,7 @@ class ScenariosController < ApplicationController
 
   def destroy
     @scenarios.delete_all
-    projects_path
+    redirect_to projects_path
   end
 
   private

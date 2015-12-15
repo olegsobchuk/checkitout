@@ -4,20 +4,17 @@
       => @project.title
       | scenarios
 .row
-  - if @titles.empty?
-    | You haven't any scenario yet.
-  - else
-    table
-      thead
-        th Title
-        th colspan='2'
-      tbody
-        tr id="scenario_title_new"
-          td = text_field_tag :new_title, '', id: 'new_scenario_title', placeholder: 'Add new title'
-          td = link_to 'Edit', 'javascript:void(false)', id: 'edit'
-          td = link_to 'Remove', 'javascript:void(false)', id: 'remove'
-        - @titles.each do |title|
-          tr id="scenario_title_#{title}"
-            td = title
-            td = link_to 'Edit', project_scenarios_path(@project, title: title)
-            td = link_to 'Remove', project_scenarios_path(@project, title: title), method: :delete, data: { confirm: 'Are you sure?' }
+  table
+    thead
+      th Title
+      th colspan='2'
+    tbody
+      tr id="scenario_title_new"
+        td = text_field_tag :new_title, '', id: 'new_scenario_title', placeholder: 'Add new title'
+        td = link_to 'Edit', 'javascript:void(false)', id: 'edit', data: { project: params[:id] }
+        td = link_to 'Remove', 'javascript:void(false)', id: 'remove'
+      - @titles.each do |title|
+        tr id="scenario_title_#{title}"
+          td = title
+          td = link_to 'Edit', project_scenarios_path(@project, title: title)
+          td = link_to 'Remove', project_scenarios_path(@project, title: title), method: :delete, data: { confirm: 'Are you sure?' }

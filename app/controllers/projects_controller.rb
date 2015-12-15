@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    redirect_to user_projects_path(current_user)
+    redirect_to projects_path(current_user)
   end
 
   def scenario
