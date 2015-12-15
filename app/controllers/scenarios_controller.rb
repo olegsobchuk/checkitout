@@ -8,7 +8,6 @@ class ScenariosController < ApplicationController
   end
 
   def update
-    binding.pry
     @project.update(scenario_params)
     redirect_to project_path(@project), flash: { success: 'Scenario updated!' }
   end
@@ -29,6 +28,13 @@ class ScenariosController < ApplicationController
   end
 
   def scenario_params
+    set_orders
     params.require(:project).permit(scenarios_attributes: [:id, :title, :order, :step, :_destroy])
+  end
+
+  def set_orders
+    params[:project][:scenarios_attributes].each_with_index.map do |step, index|
+      step['order'] = index + 1
+    end
   end
 end

@@ -5,8 +5,12 @@ left
 center#title
   h3= @scenarios.first.title
 
+= render 'default_step', title: @scenarios.first.title
 = simple_form_for @project, url: project_scenarios_path(@project), method: :put do |f|
-  = render 'default_step', title: @scenarios.first.title
   - @scenarios.each do |scenario|
-    = render 'step', scenario: scenario
-  = f.submit
+    .row
+      .large-12.columns
+        = render 'step', scenario: scenario
+  .row
+    .small-8.large-6.large-offset-1.columns
+      = f.submit
