@@ -3,7 +3,7 @@ require 'capybara/poltergeist'
 
 class Capster
   include Capybara::DSL
-  Capybara.default_max_wait_time = 5
+  Capybara.default_max_wait_time = 8
 
   attr_reader :session
 
