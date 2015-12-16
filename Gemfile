@@ -13,6 +13,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'kaminari'
 gem 'pg'
+gem 'poltergeist'
+gem 'rspec-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
@@ -32,11 +34,9 @@ group :development, :test do
   gem 'faker'
   gem 'factory_girl_rails'
   gem 'letter_opener'
-  gem 'poltergeist'
   gem 'pry-rails'
   gem 'puma'
   gem 'quiet_assets'
-  gem 'rspec-rails'
   gem 'rspec-retry'
   gem 'simplecov', require: false
 end

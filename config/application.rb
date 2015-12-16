@@ -28,5 +28,8 @@ module Checkitout
       g.helper_specs false
       g.view_specs false
     end
+
+    # Autoload lib/ folder including all subdirectories
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
   end
 end
